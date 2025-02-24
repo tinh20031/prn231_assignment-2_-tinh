@@ -1,0 +1,26 @@
+﻿@page "{id:int}"
+@model BookStoreClient.Pages.Publishers.EditModel
+@{
+    ViewData["Title"] = "Cập nhật Nhà Xuất Bản";
+}
+
+<h2>Cập nhật Nhà Xuất Bản</h2>
+
+<form method="post">
+    <input type="hidden" asp-for="Publisher.PubId" />
+
+    <div class="mb-3">
+        <label class="form-label">Tên Nhà Xuất Bản</label>
+        <input type="text" class="form-control" asp-for="Publisher.PubName" required />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Thành phố</label>
+        <input type="text" class="form-control" asp-for="Publisher.City" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Quốc gia</label>
+        <input type="text" class="form-control" asp-for="Publisher.Country" />
+    </div>
+    <button type="submit" class="btn btn-primary">Lưu</button>
+    <a class="btn btn-secondary" asp-page="Index">Hủy</a>
+</form>

@@ -1,0 +1,41 @@
+﻿@page
+@model BookStoreClient.Pages.Authors.IndexModel
+@{
+    ViewData["Title"] = "Danh sách tác giả";
+}
+
+<h2>Danh sách tác giả</h2>
+<a class="btn btn-primary mb-3" asp-page="Create">Thêm tác giả</a>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Họ</th>
+            <th>Tên</th>
+            <th>Email</th>
+            <th>Thao tác</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var author in Model.Authors)
+        {
+            <tr>
+                <td>@author.AuthorId</td>
+                <td>@author.LastName</td>
+                <td>@author.FirstName</td>
+                <td>@author.EmailAddress</td>
+                <td>
+                    <a class="btn btn-warning btn-sm" asp-page="Edit" asp-route-id="@author.AuthorId">Sửa</a>
+                    <form method="post" asp-page="Index">
+                        <input type="hidden" name="id" value="@author.AuthorId" />
+                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Bạn có chắc chắn muốn xóa?');">
+                            Xóa
+                        </button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<

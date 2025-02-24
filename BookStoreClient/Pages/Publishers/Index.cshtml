@@ -1,0 +1,41 @@
+﻿@page
+@model BookStoreClient.Pages.Publishers.IndexModel
+@{
+    ViewData["Title"] = "Danh sách nhà xuất bản";
+}
+
+<h2>Danh sách nhà xuất bản</h2>
+<a class="btn btn-primary mb-3" asp-page="Create">Thêm nhà xuất bản</a>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Tên</th>
+            <th>Thành phố</th>
+            <th>Quốc gia</th>
+            <th>Thao tác</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var publisher in Model.Publishers)
+        {
+            <tr>
+                <td>@publisher.PubId</td>
+                <td>@publisher.PubName</td>
+                <td>@publisher.City</td>
+                <td>@publisher.Country</td>
+                <td>
+                     <a class="btn btn-warning btn-sm" asp-page="Edit" asp-route-id="@publisher.PubId">Sửa</a>
+                    
+                    <form method="post" asp-page="Index">
+                        <input type="hidden" name="id" value="@publisher.PubId" />
+                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Bạn có chắc muốn xóa?');">
+                            Xóa
+                        </button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

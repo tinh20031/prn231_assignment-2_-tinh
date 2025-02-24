@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "w1X2YoGUw53YymdEOtkJM4+7PtLxNWuhdF/q0Hmmgsg=",
+  "Source": "OdataBookStore",
+  "BasePath": "_content/OdataBookStore",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

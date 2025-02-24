@@ -1,0 +1,25 @@
+﻿@page "{id}"
+@model BookStoreClient.Pages.Authors.EditModel
+@{
+    ViewData["Title"] = "Sửa tác giả";
+}
+
+<h2>Sửa tác giả</h2>
+
+<form method="post">
+    <input type="hidden" asp-for="Author.AuthorId" />
+    <div class="form-group">
+        <label>Họ</label>
+        <input type="text" asp-for="Author.LastName" class="form-control" required />
+    </div>
+    <div class="form-group">
+        <label>Tên</label>
+        <input type="text" asp-for="Author.FirstName" class="form-control" required />
+    </div>
+    <div class="form-group">
+        <label>Email</label>
+        <input type="email" asp-for="Author.EmailAddress" class="form-control" required />
+    </div>
+    <button type="submit" class="btn btn-success">Lưu</button>
+    <a asp-page="Index" class="btn btn-secondary">Hủy</a>
+</form>

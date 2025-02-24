@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Name": "OdataBookStore\\OdataBookStore.csproj",
+        "Action": "Start"
+      },
+      {
+        "Name": "BookStoreClient\\BookStoreClient.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

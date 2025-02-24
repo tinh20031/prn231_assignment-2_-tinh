@@ -1,0 +1,24 @@
+﻿@page
+@model BookStoreClient.Pages.Publishers.CreateModel
+@{
+    ViewData["Title"] = "Thêm Nhà Xuất Bản";
+}
+
+<h2>Thêm Nhà Xuất Bản</h2>
+
+<form method="post">
+    <div class="mb-3">
+        <label class="form-label">Tên Nhà Xuất Bản</label>
+        <input type="text" class="form-control" asp-for="Publisher.PubName" required />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Thành phố</label>
+        <input type="text" class="form-control" asp-for="Publisher.City" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Quốc gia</label>
+        <input type="text" class="form-control" asp-for="Publisher.Country" />
+    </div>
+    <button type="submit" class="btn btn-primary">Thêm</button>
+    <a class="btn btn-secondary" asp-page="Index">Hủy</a>
+</form>
