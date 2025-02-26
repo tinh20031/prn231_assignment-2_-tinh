@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("OdataBookStore")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4529621fdef341fec452253a7a691a327f5defb6")]
 [assembly: System.Reflection.AssemblyProductAttribute("OdataBookStore")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OdataBookStore")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,128 +1,129 @@
 ﻿@page
 @model BookStoreClient.Pages.Books.IndexModel
 @{
-    ViewData["Title"] = "Quản lý sách";
+	ViewData["Title"] = "Quản lý sách";
 }
 
 <h2 class="text-center mt-3">Danh sách Sách</h2>
 
 <div class="container mt-4">
-    <table class="table table-bordered table-striped">
-        <thead class="table-dark">
-            <tr>
-                <th>ID</th>
-                <th>Tiêu đề</th>
-                <th>Loại</th>
-                <th>Giá</th>
-                <th > tiền tạm ứng </th>
-                <th > tiền bản quyền </th>
-                <th > ghi chú </th>
-                <th>Thao tác</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var book in Model.BookList)
-            {
-                <tr>
-                    <td>@book.BookId</td>
-                    <td>@book.Title</td>
-                    <td>@book.Type</td>
-                    <td>@book.Price</td>
-                    <td > @book.Advance</td>
-                    <td> @book.Royalty</td>
-                    <td> @book.Note</td>
-                    <td>
-                        <button class="btn btn-warning btn-sm"
-                                onclick="editBook(@book.BookId, '@book.Title', '@book.Type', @book.Price, @book.Advance, @book.Royalty, @book.Note)">
-                            Sửa
-                        </button>
-                        <form method="post" asp-page-handler="Delete" asp-route-id="@book.BookId" class="d-inline">
-                            <button type="submit" class="btn btn-danger btn-sm">Xóa</button>
-                        </form>
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
+	<table class="table table-bordered table-striped">
+		<thead class="table-dark">
+			<tr>
+				<th>ID</th>
+				<th>Tiêu đề</th>
+				<th>Loại</th>
+				<th>Giá</th>
+				<th> tiền tạm ứng </th>
+				<th> tiền bản quyền </th>
+				<th> ghi chú </th>
+				<th>Thao tác</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var book in Model.BookList)
+			{
+				<tr>
+					<td>@book.BookId</td>
+					<td>@book.Title</td>
+					<td>@book.Type</td>
+					<td>@book.Price</td>
+					<td> @book.Advance</td>
+					<td> @book.Royalty</td>
+					<td> @book.Note</td>
+					<td>
+						<button class="btn btn-warning btn-sm"
+								onclick="editBook(@book.BookId, '@book.Title', '@book.Type', @book.Price, @book.Advance, @book.Royalty, '@book.Note')">
+							Sửa
+						</button>
+
+						<form method="post" asp-page-handler="Delete" asp-route-id="@book.BookId" class="d-inline">
+							<button type="submit" class="btn btn-danger btn-sm">Xóa</button>
+						</form>
+					</td>
+				</tr>
+			}
+		</tbody>
+	</table>
 </div>
 
 <!-- Modal Thêm/Sửa Sách -->
 <div class="modal fade" id="bookModal" tabindex="-1" aria-labelledby="bookModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="bookModalLabel">Thêm/Sửa Sách</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form id="bookForm" method="post">
-                    <input type="hidden" id="BookId" name="BookId" />
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="bookModalLabel">Thêm/Sửa Sách</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<form id="bookForm" method="post">
+					<input type="hidden" id="BookId" name="BookId" />
 
-                    <div class="mb-3">
-                        <label class="form-label">Tiêu đề</label>
-                        <input type="text" class="form-control" id="Title" name="Title" required>
-                    </div>
+					<div class="mb-3">
+						<label class="form-label">Tiêu đề</label>
+						<input type="text" class="form-control" id="Title" name="Title" required>
+					</div>
 
-                    <div class="mb-3">
-                        <label class="form-label">Loại</label>
-                        <input type="text" class="form-control" id="Type" name="Type" required>
-                    </div>
+					<div class="mb-3">
+						<label class="form-label">Loại</label>
+						<input type="text" class="form-control" id="Type" name="Type" required>
+					</div>
 
-                    <div class="mb-3">
-                        <label class="form-label">Giá</label>
-                        <input type="number" class="form-control" id="Price" name="Price" required>
-                    </div> 
-                    <div class="mb-3">
-                        <label class="form-label">tiền tạm ứng </label>
-                        <input type="number" class="form-control" id="advance" name="advance" required>
-                    </div>   
-                    <div class="mb-3">
-                        <label class="form-label">tiền bản quyền  </label>
-                        <input type="number" class="form-control" id="royalty" name="royalty" required>
-                    </div>  
-                    <div class="mb-3">
-                        <label class="form-label">ghi chú </label>
-                        <input type="text" class="form-control" id="Note" name="Note" required>
-                    </div>
+					<div class="mb-3">
+						<label class="form-label">Giá</label>
+						<input type="number" class="form-control" id="Price" name="Price" required>
+					</div>
+					<div class="mb-3">
+						<label class="form-label">tiền tạm ứng </label>
+						<input type="number" class="form-control" id="advance" name="advance" required>
+					</div>
+					<div class="mb-3">
+						<label class="form-label">tiền bản quyền  </label>
+						<input type="number" class="form-control" id="royalty" name="royalty" required>
+					</div>
+					<div class="mb-3">
+						<label class="form-label">ghi chú </label>
+						<input type="text" class="form-control" id="Note" name="Note" required>
+					</div>
 
 
-                    <button type="submit" class="btn btn-primary" id="saveButton">Lưu</button>
-                </form>
-            </div>
-        </div>
-    </div>
+					<button type="submit" class="btn btn-primary" id="saveButton">Lưu</button>
+				</form>
+			</div>
+		</div>
+	</div>
 </div>
 
 <!-- Nút mở modal thêm sách -->
 <div class="text-center mt-4">
-    <button class="btn btn-success" onclick="addBook()">Thêm Sách</button>
+	<button class="btn btn-success" onclick="addBook()">Thêm Sách</button>
 </div>
 
 @section Scripts {
-    <script>
-        function addBook() {
-            document.getElementById("bookForm").setAttribute("action", "?handler=Add");
-            document.getElementById("BookId").value = "";
-            document.getElementById("Title").value = "";
-            document.getElementById("Type").value = "";
-            document.getElementById("Price").value = "";
-            document.getElementById("advance").value = "";
-            document.getElementById("royalty").value = "";
-            document.getElementById("Note").value = "";
+	<script>
+		function addBook() {
+			document.getElementById("bookForm").setAttribute("action", "?handler=Add");
+			document.getElementById("BookId").value = "";
+			document.getElementById("Title").value = "";
+			document.getElementById("Type").value = "";
+			document.getElementById("Price").value = "";
+			document.getElementById("advance").value = "";
+			document.getElementById("royalty").value = "";
+			document.getElementById("Note").value = "";
 
-            new bootstrap.Modal(document.getElementById('bookModal')).show();
-        }
+			new bootstrap.Modal(document.getElementById('bookModal')).show();
+		}
 
-        function editBook(id, title, type, price, advance, royalty, Note) {
-            document.getElementById("bookForm").setAttribute("action", "?handler=Update");
-            document.getElementById("BookId").value = id;
-            document.getElementById("Title").value = title;
-            document.getElementById("Type").value = type;
-            document.getElementById("Price").value = price;
-            document.getElementById("advance").value = advance;
-            document.getElementById("royalty").value = royalty;
-            document.getElementById("Note").value = Note;
-            new bootstrap.Modal(document.getElementById('bookModal')).show();
-        }
-    </script>
+		function editBook(id, title, type, price, advance, royalty, Note) {
+			document.getElementById("bookForm").setAttribute("action", "?handler=Update");
+			document.getElementById("BookId").value = id;
+			document.getElementById("Title").value = title;
+			document.getElementById("Type").value = type;
+			document.getElementById("Price").value = price;
+			document.getElementById("advance").value = advance;
+			document.getElementById("royalty").value = royalty;
+			document.getElementById("Note").value = Note;
+			new bootstrap.Modal(document.getElementById('bookModal')).show();
+		}
+	</script>
 }

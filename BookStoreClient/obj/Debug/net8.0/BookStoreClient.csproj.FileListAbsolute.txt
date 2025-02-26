@@ -100,3 +100,4 @@ D:\source_code\SC_PRN231\LAB\PRN231_ASS2_QTINH\BookStoreClient\obj\Debug\net8.0\
 D:\source_code\SC_PRN231\LAB\PRN231_ASS2_QTINH\BookStoreClient\obj\Debug\net8.0\BookStoreClient.pdb
 D:\source_code\SC_PRN231\LAB\PRN231_ASS2_QTINH\BookStoreClient\obj\Debug\net8.0\BookStoreClient.genruntimeconfig.cache
 D:\source_code\SC_PRN231\LAB\PRN231_ASS2_QTINH\BookStoreClient\obj\Debug\net8.0\ref\BookStoreClient.dll
+D:\source_code\SC_PRN231\LAB\PRN231_ASS2_QTINH\BookStoreClient\obj\Debug\net8.0\BookStoreClient.sourcelink.json

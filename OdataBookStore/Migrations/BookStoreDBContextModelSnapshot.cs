@@ -104,8 +104,8 @@ namespace OdataBookStore.Migrations
                     b.Property<string>("Title")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("Type")
-                        .HasColumnType("int");
+                    b.Property<string>("Type")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<double?>("YtlSales")
                         .HasColumnType("float");
@@ -124,7 +124,7 @@ namespace OdataBookStore.Migrations
                             PubId = 1,
                             PublishedDate = new DateTime(2022, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Title = "C# Programming",
-                            Type = 1
+                            Type = "do thám"
                         },
                         new
                         {
@@ -133,7 +133,7 @@ namespace OdataBookStore.Migrations
                             PubId = 2,
                             PublishedDate = new DateTime(2023, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Title = "ASP.NET Core",
-                            Type = 2
+                            Type = "kinh dị"
                         });
                 });
 

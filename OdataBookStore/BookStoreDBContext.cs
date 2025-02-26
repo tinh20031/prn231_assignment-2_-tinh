@@ -32,7 +32,7 @@ namespace OdataBookStore
             modelBuilder.Entity<User>()
                  .HasOne(u => u.Role)
                  .WithMany(r => r.Users)
-                 .HasForeignKey(u => u.RoleId)
+                   .HasForeignKey(u => u.RoleId)
                  .OnDelete(DeleteBehavior.Restrict);
             
             modelBuilder.Entity<User>()
@@ -71,8 +71,8 @@ namespace OdataBookStore
 
             // Seed data for Books
             modelBuilder.Entity<Book>().HasData(
-                new Book { BookId = 1, Title = "C# Programming", Type = 1, PubId = 1, Price = 29.99, PublishedDate = new DateTime(2022, 1, 1) },
-                new Book { BookId = 2, Title = "ASP.NET Core", Type = 2, PubId = 2, Price = 39.99, PublishedDate = new DateTime(2023, 5, 15) }
+                new Book { BookId = 1, Title = "C# Programming", Type = "do thám", PubId = 1, Price = 29.99, PublishedDate = new DateTime(2022, 1, 1) },
+                new Book { BookId = 2, Title = "ASP.NET Core", Type = "kinh dị", PubId = 2, Price = 39.99, PublishedDate = new DateTime(2023, 5, 15) }
             );
 
             // Seed data for BookAuthor

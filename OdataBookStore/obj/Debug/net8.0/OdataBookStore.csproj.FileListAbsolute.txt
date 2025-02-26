@@ -171,3 +171,4 @@ D:\source_code\SC_PRN231\LAB\PRN231_ASS2_QTINH\OdataBookStore\obj\Debug\net8.0\r
 D:\source_code\SC_PRN231\LAB\PRN231_ASS2_QTINH\OdataBookStore\obj\Debug\net8.0\OdataBookStore.pdb
 D:\source_code\SC_PRN231\LAB\PRN231_ASS2_QTINH\OdataBookStore\obj\Debug\net8.0\OdataBookStore.genruntimeconfig.cache
 D:\source_code\SC_PRN231\LAB\PRN231_ASS2_QTINH\OdataBookStore\obj\Debug\net8.0\ref\OdataBookStore.dll
+D:\source_code\SC_PRN231\LAB\PRN231_ASS2_QTINH\OdataBookStore\obj\Debug\net8.0\OdataBookStore.sourcelink.json
